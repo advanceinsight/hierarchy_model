@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="objectives_objectives">
+      <field name="name">Strategic Objectives</field>
+      <field name="res_model">objectives.objectives</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="objectives_activities">
+      <field name="name">Strategic Activities</field>
+      <field name="res_model">objectives.activities</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="objectives_sub_activities">
+      <field name="name">Sub-Activitites</field>
+      <field name="res_model">objectives.sub_activities</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

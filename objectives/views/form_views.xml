@@ -1,0 +1,96 @@
+<odoo>
+  	<data>
+
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="objectives_obj_form">
+      <field name="name">Obj_form</field>
+      <field name="model">objectives.objectives</field>
+      <field name="arch" type="xml">
+        <form string="Add new objective">
+          <sheet>
+            <div name="button_box" position="inside" class="oe_button_box">
+              <button   class="oe_stat_button" type="object" name="get_activities" 
+                        icon="fa-list" string="Activities:">
+                <field  name="activities_count_on_obj" widget="statinfo" string=" "/>
+              </button>
+            </div>
+            <div class="oe_title">
+              <h1><field name="name"/></h1>
+            </div>
+            <group>
+              <group string="Key information">  
+                <field name="responsible" widget="many2many_tags"/>
+                <field name="budget_total"/>
+              </group>
+              <group string="Details">
+                <field name="objective_start"/>
+                <field name="objective_end"/>
+                <field name="objective_note"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="objectives_activity_form">
+      <field name="name">Act_form</field>
+      <field name="model">objectives.activities</field>
+      <field name="arch" type="xml">
+        <form string="Add new activity">
+          <sheet>
+            <div name="button_box" position="inside" class="oe_button_box">
+              <button   class="oe_stat_button" type="object" name="get_subs" 
+                        icon="fa-list" string="Sub-Activ.:">
+                <field  name="sub_activities_count" widget="statinfo" string=" "/>
+              </button>
+            </div>
+            <div class="oe_title">
+              <h1><field name="name"/></h1>
+            </div>
+            <group>
+              <group string="Key information">
+                <field name="key_objective"/>  
+                <field name="responsible" widget="many2many_tags"/>
+                <field name="budget"/>
+              </group>
+              <group string="Details">
+                <field name="activity_start"/>
+                <field name="activity_end"/>
+                <field name="activity_note"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="objectives_sub_activity_form">
+      <field name="name">Sub_Act_form</field>
+      <field name="model">objectives.sub_activities</field>
+      <field name="arch" type="xml">
+        <form string="Add new sub-activity">
+          <sheet>
+            <div class="oe_title">
+              <h1><field name="name"/></h1>
+            </div>
+            <group>
+              <group string="Key information">  
+                <field name="key_activity"/>
+                <field name="responsible" widget="many2many_tags"/>
+                <field name="budget"/>
+              </group>
+              <group string="Details">
+                <field name="sub_activity_start"/>
+                <field name="sub_activity_end"/>
+                <field name="sub_activity_note"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+	</data>
+</odoo>

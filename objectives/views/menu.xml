@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+    
+    <!-- Top menu item -->
+
+    <menuitem name="Performance" id="objectives.menu_root" web_icon="objectives,static/src/img/icon.png"/>
+
+    <!-- menu categories -->
+
+    <menuitem   name="Strategic Objectives" 
+                id="objectives.menu_1" 
+                parent="objectives.menu_root"
+                action="objectives_objectives"/>
+    
+    <menuitem   name="Strategic Activities" 
+                id="objectives.menu_2" 
+                parent="objectives.menu_root"
+                action="objectives_activities"/>
+    
+    <menuitem   name="Sub-Activities" 
+                id="objectives.menu_3" 
+                parent="objectives.menu_root"
+                action="objectives_sub_activities"/>
+
+  </data>
+</odoo>

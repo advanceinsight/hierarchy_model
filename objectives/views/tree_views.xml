@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="objectives_objectives_tree">
+      <field name="name">Strategic Objectives</field>
+      <field name="model">objectives.objectives</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="responsible" widget="many2many_tags"/>
+          <field name="objective_start"/>
+          <field name="objective_end"/>
+          <field name="budget_total" sum="Total Budget"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="objectives_activities_tree">
+      <field name="name">Strategic Activities</field>
+      <field name="model">objectives.activities</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="key_objective"/>
+          <field name="responsible" widget="many2many_tags"/>
+          <field name="activity_start"/>
+          <field name="activity_end"/>
+          <field name="budget" sum="Total Budget"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="objectives_sub_activities_tree">
+      <field name="name">Sub-Activitites</field>
+      <field name="model">objectives.sub_activities</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="key_activity"/>
+          <field name="responsible" widget="many2many_tags"/>
+          <field name="sub_activity_start"/>
+          <field name="sub_activity_end"/>
+          <field name="budget" sum="Total Budget"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>
